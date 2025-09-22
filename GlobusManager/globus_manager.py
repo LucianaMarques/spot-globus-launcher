@@ -157,6 +157,7 @@ class GlobusManager(BaseClass):
             while (attempts < self.max_retry):
                 try:
                     self.log_info("Attempting to execute function")
+                    # TODO: we need to make this part to be generic for the user's function
                     #future = gce.submit_to_registered_function(function_id, kwargs={ "bag_size": self.config.bag_size })
                     args = { "size_in_mb": 9000, "num_workers": 6 }
                     self.log_info(f'Function args: {args}')
